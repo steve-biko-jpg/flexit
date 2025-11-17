@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 :root {
-    --hero-primary-color: 0, 0, 128;
     --primary-color: rgb(0, 0, 128);
     --secondary-color: #2ecc71;
     --accent-color: #d2d201;
@@ -58,12 +57,38 @@ section {
     padding: 60px 20px;
     text-align: center;
 }
+.hero-button, .about-button, .cta-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+.hero-button:hover, .about-button:hover, .cta-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
 
 /*Hero Section*/
 .hero {
     position: relative;
     top: 0;
-    background-image: url("media/background-image.png");
+    background-image: url("media/background-image.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -74,7 +99,7 @@ section {
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    background-color: rgba(var(--hero-primary-color), 0.7);
+    background-color: rgba(0, 0, 128, 0.7);
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -89,20 +114,134 @@ section {
     margin-bottom: 30px;
     font-style: italic;
 }
-.hero-button {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
+
+/*About Section*/
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
 }
-.hero-button:hover {
-    border: double 10px var(--primary-color);
-    transition: all 0.2s ease;
+.about-content, .about-image {
+    text-align: center;
+    padding: 20px;
+    width: 40%;
+}
+.about-image img {
+    max-width: 400px;
+    height: auto;
+    margin-left: 20px;
+    border-radius: 20px;
+}
+/*Services Section*/
+.services-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--primary-color);
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+.services-section > h2 {
+    grid-column: span 3;
+    margin-bottom: 20px;
+    color: var(--background-color);
+}
+
+.service-card {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.portfolio {
+    display: flex;
+    flex-direction:column;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    border-radius: 10px;
+    background-color: rgb(233, 233, 233);
+}
+.portfolio-gallery {
+    display: flex;
+}
+.portfolio-item {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.portfolio img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.portfolio-item p, .portfolio-item img[alt] {
+    color: var(--background-color);
+}
+.testimonials {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    width: 60%;
+    margin: 0 auto;
+}
+.testimonials h2 {
+    margin-bottom: 20px;
+    color: var(--background-color);
+}
+.testimonial-card {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 30px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.testimonial-card h4 {
+    margin-top: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.testimonial-card p {
+    font-style: italic;
+}
+
+
+/*Footer Styling*/
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
 }
 /*Responsive Design*/
 @media (max-width: 768px) {
@@ -135,6 +274,7 @@ section {
         align-items: space-between;
         height: 20px;
         width: 25px;
+        margin-right: 20px;
     }
     .hamburger span {
         display: block;
@@ -143,22 +283,35 @@ section {
         border-radius: 2px;
         margin: 4px 0;
     }
-}
-
-/*About Section*/
-.about, .services, .contact {
-    max-width: 800px;
-    display: flex;
-}
-
-/*Footer Styling*/
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 40px;
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-content, .about-image {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    .services-section {
+        background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+    }
+    .portfolio {
+        display: flex;
+        flex-direction: column;
+    }
+    .portfolio-gallery {
+        display: flex;
+        flex-direction: column;
+    }
+   .testimonials {
+        background-color: var(--primary-color);
+        color: var(--background-color);
+        padding: 40px 20px;
+        border-radius: 10px;
+        margin-top: 40px;
+        width: 90%;
+        margin: 0 auto;
+    } 
 }
