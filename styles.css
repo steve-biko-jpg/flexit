@@ -85,7 +85,7 @@ h3 {
 }
 
 /*Hero Section*/
-.hero {
+.hero, .about-page-hero, .services-page-hero, .portfolio-hero {
     position: relative;
     top: 0;
     background-image: url("media/background-image.jpg");
@@ -94,7 +94,7 @@ h3 {
     height: 100vh;
     text-align: center;
 }
-.hero-content {
+.hero-content, .about-page-hero-content, .services-page-hero-content, .portfolio-hero-content {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -150,6 +150,7 @@ h3 {
 }
 
 .service-card {
+    min-width: 20%;
     background-color: var(--background-color);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -162,39 +163,42 @@ h3 {
     transform: translateY(-10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-.portfolio {
+.portfolio-items {
+    padding: 60px 20px;
+    text-align: center;
     display: flex;
-    flex-direction:column;
-    width: 90%;
-    margin: 0 auto;
-    padding: 40px 20px;
-    border-radius: 10px;
-    background-color: rgb(233, 233, 233);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
-.portfolio-gallery {
-    display: flex;
+.portfolio-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 .portfolio-item {
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 10px;
-    flex: 1;
+    width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .portfolio-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-.portfolio img {
+.portfolio-item img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
+    display: block;
+    
 }
-.portfolio-item p, .portfolio-item img[alt] {
-    color: var(--background-color);
+.portfolio-item p {
+    font-weight: bold;
+    color: var(--primary-color);
+    vertical-align: bottom;
 }
 .testimonials {
     background-color: var(--primary-color);
@@ -230,6 +234,8 @@ h3 {
 .testimonial-card p {
     font-style: italic;
 }
+
+/*About Page*/
 
 
 /*Footer Styling*/
